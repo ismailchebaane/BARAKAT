@@ -18,6 +18,8 @@ import {AuthContext} from "./authContext.js"
 import {useContext} from "react";
 import Products from "../pages/products/products"
 import ProductZoom from "../pages/productZoom/productzoom.js"
+import NotFound from "../pages/404/Notfound.js";
+
 const Navigation=()=>{
 const productInCart=useSelector(cartProducts);
 const {user}=useContext(AuthContext);
@@ -29,17 +31,17 @@ return(
 <BrowserRouter>
 <Header  cartCount={productInCart ? productInCart.length : 0 }/>
 <Routes>
-  
-  <Route path="/product/:id" element={<ProductZoom />}   />
-  <Route path='/logout' element={user? <Logout />:<Navigate to='/login'></Navigate> }   />
-<Route exact path='/' element={ <Home />} />
-<Route  path='/cart' element={user? <Cart /> : <Navigate to='/login'> </Navigate>}   />
-<Route  path='/login' element={!user? <Login /> : <Navigate to='/'></Navigate>} />
-<Route  path='/menu' element={ <Menu />} />
-<Route  path='/#about' element={ <About />} />
-<Route  path='/payment-success' element={ <PaymentSuccess />} />
-<Route  path='/register' element={!user?  <Register /> : <Navigate to='/'></Navigate>}   />
-<Route path="/product" element={<Products />} />
+  <Route path="*" element={<NotFound />} />
+  <Route path="/BARAKAT/product/:id" element={<ProductZoom />}   />
+  <Route path='/BARAKAT/logout' element={user? <Logout />:<Navigate to='/BARAKAT/login'></Navigate> }   />
+<Route exact path='/BARAKAT' element={ <Home />} />
+<Route  path='/BARAKAT/cart' element={user? <Cart /> : <Navigate to='/BARAKAT/login'> </Navigate>}   />
+<Route  path='/BARAKAT/login' element={!user? <Login /> : <Navigate to='/BARAKAT'></Navigate>} />
+<Route  path='/BARAKAT/menu' element={ <Menu />} />
+<Route  path='/BARAKAT/#about' element={ <About />} />
+<Route  path='/BARAKAT/payment-success' element={ <PaymentSuccess />} />
+<Route  path='/BARAKAT/register' element={!user?  <Register /> : <Navigate to='/BARAKAT'></Navigate>}   />
+<Route path="/BARAKAT/product" element={<Products />} />
 </Routes>
 <Footer />
 </BrowserRouter>

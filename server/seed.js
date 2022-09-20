@@ -4,7 +4,7 @@ const MongoClient=require("mongodb").MongoClient;
 const _=require('lodash');
 async function main (){
 
-const url="mongodb+srv://ismail:"+process.env.SECRET_KEY+"@foodordering.psde9sy.mongodb.net/?retryWrites=true&w=majority";
+const url="mongodb+srv://ismail:xZGFHZUiqDeljwaR@foodordering.psde9sy.mongodb.net/?retryWrites=true&w=majority";
 const client=new MongoClient(url)
 
 try{

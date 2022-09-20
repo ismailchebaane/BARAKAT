@@ -95,15 +95,15 @@ function ProductZoom() {
 if (p.id===id){
    console.log(p.id)
 return (
-<div className="prodZoom bg-white h-full  p-6 rounded-lg shadow-lg bg-white ">
-    <div  className=' iimgProdZoom  inline-block  p-6 rounded-lg shadow-lg bg-white max-w-2xl min-w-sm'>
+<div className="prodZoom  bg-white h-full  p-6 rounded-lg shadow-lg bg-white ">
+    <div  className='iimgProdZoom  inline-block  p-6 rounded-lg shadow-2xl bg-white max-w-2xl min-w-sm'>
 
 
 
     <img   src={p.imageUrl} alt={p.name}/>
     </div>
 
-  <div className="descProdZoom   inline-block pl-9  pb-9 p-6 rounded-lg shadow-2xl bg-white min-h-sm  max-h-2xl max-w-2xl min-w-sm">
+  <div className="descProdZoom absolute inline-block pl-9 ml-5 pb-9 p-6 rounded-lg shadow-2xl bg-white min-h-sm  max-h-2xl max-w-2xl min-w-sm">
  <h1 className="text-3xl font-bold pb-5 pt-9">{p.name}</h1>
  <h2 className="text-xl  font-bold  pb-2 ">Description :</h2>
  

@@ -24,7 +24,7 @@ if(products.length<=0){
 return(
 <div className='bg-white h-full text-black flex  justify-center p-4'>
 <h1>Your cart is Empty</h1>
-<Link to='/'className='pl-5  text-black font-bold'> Go to products</Link>
+<Link to='/BARAKAT'className='pl-5  text-black font-bold'> Go to products</Link>
 
 
 </div>

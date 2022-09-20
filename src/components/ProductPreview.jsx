@@ -45,7 +45,7 @@ function ProductPreview() {
   
   }])
   useEffect(()=>{
-    fetch('/api/products').then(resp=>resp.json())
+    fetch('/BARAKAT/api/products').then(resp=>resp.json())
     .then(data=>{setData(data)})
   
   

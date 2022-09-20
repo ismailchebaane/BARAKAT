@@ -54,7 +54,7 @@ ul > li {
   
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    margin-top:80px;
+    margin-top:50px;
     display: block;
     width: 100%;
     position: relative;
@@ -203,11 +203,10 @@ width:200px  ;
 
    }
    
-    body {
-        height: 200vh;
-        overflow-x: hidden;
-        overflow-y: scroll;
-    }
+   .descProdZoom{
+    position:relative;
+   }
+  
     .footer .inner {
         display: grid;
         grid-template-columns: repeat( auto-fit, minmax(200px, 1fr) );

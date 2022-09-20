@@ -21,23 +21,23 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
  app.use(express.json());
 var corsOption={
-  origin:"http://localhost/3000"
+  origin:"http://localhost/3000/BARAKAT"
 }
 app.use(cors(corsOption))
 app.use(bodyParser.json())
 app.use(cookieParser())
 db.on('error',console.error.bind(console,'MongoDb has Failed To connect error :'))
 
-app.get('/', (req,res)=>{
+app.get('/BARAKAT', (req,res)=>{
 res.json({message:"welcome to food ordering"})
 
 
 })
 
 
-  app.use('/api/',ProductRouter)
+  app.use('/BARAKAT/api/',ProductRouter)
 
-app.get('/api/products',async (req,res)=>{
+app.get('/BARAKAT/api/products',async (req,res)=>{
  Product.find({}).then((resl)=>{
    res.send(resl);
   }).catch((err)=>{
@@ -49,7 +49,7 @@ app.get('/api/products',async (req,res)=>{
 
 
 
-app.get('/products-by-categories',async (req,res)=>{
+app.get('/BARAKAT/products-by-categories',async (req,res)=>{
   try{
   const product=await Product.aggregate([
       {$match:{}},
@@ -73,7 +73,7 @@ app.get('/products-by-categories',async (req,res)=>{
    })
 
  
-const url="mongodb+srv://ismail:"+process.env.SECRET_KEY+"@foodordering.psde9sy.mongodb.net/?retryWrites=true&w=majority";
+const url="mongodb+srv://ismail:xZGFHZUiqDeljwaR@foodordering.psde9sy.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose.connect(url, function(err) {
        if (err) {
@@ -96,7 +96,7 @@ mongoose.connect(url, function(err) {
 const User = mongoose.model("UserInfo", userShema);
 
 
-app.post('/register',async (req,res)=> {
+app.post('/BARAKAT/register',async (req,res)=> {
 try {
   
   const { name, email, password } = req.body;  
@@ -122,7 +122,7 @@ res.send({status:"Registered"})}
 })
 
 
-app.post("/login",async(req,res)=>{
+app.post("/BARAKAT/login",async(req,res)=>{
 try{
 const {email } = req.body;  
  await User.findOne({email},async(err,user)=>{
@@ -131,7 +131,7 @@ if(!err){
 const isCorrect= user.password===(await md5(req.body.password))
 if(isCorrect){
   
-  const secret=await process.env.SECRET_TOKEN
+  const secret= "thisismytokenokays"
 const token=await jwt.sign({id:user._id},secret)
 //to get all info about user except his password and user._doc to get only user info not other info with user info
 await User.updateOne({email:user.email},{token:token})
@@ -165,7 +165,7 @@ else{console.log(err)}
 
 })
 
-app.get("/logout",async(req, res)=>{
+app.get("/BARAKAT/logout",async(req, res)=>{
 res.clearCookie("access_token",{path:'/'})
 res.status(200).send("userLoggedOut")
 

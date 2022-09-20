@@ -22,8 +22,8 @@ reducers:{
 })
 export const {getProducts}=productsSlice.actions
 export const productReducer=productsSlice.reducer
-export const fetchProducts=createAsyncThunk('products/fetchProducts',async()=>{
-const response=await fetch("/products-by-categories")
+export const fetchProducts=createAsyncThunk('/BARAKAT/products/fetchProducts',async()=>{
+const response=await fetch("/BARAKAT/products-by-categories")
 const data =await response.json();
 return data
 

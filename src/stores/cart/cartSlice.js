@@ -10,11 +10,11 @@ reducers:{
     addToCart:(state,action)=>{
         const x=action.payload.name
         const index=state.products.findIndex(function(object,ind){
-           if(object.name==x) {
+           if(object.name===x) {
             return ind
            }
         });
-       if(index==-1){ 
+       if(index===-1){ 
       
         return{products:[...state.products,{...action.payload,amount:1}]}
     
