@@ -12,6 +12,14 @@ const ProductRouter=require("./Routes/ProductRoute")
 const jwt = require('jsonwebtoken');
 const cookieParser=require("cookie-parser")
 
+const path=require('path');
+if(process.env.NODE_ENV==="production"){
+
+  app.use(express.static("food-ordering-app/build"))
+  app.get('*',(req,res)=>{
+    res.sendFile(path.resolve(__dirname,"food-ordering-app","build","index.html"))
+  })
+}
 
 const app=express();
 
@@ -173,7 +181,7 @@ res.status(200).send("userLoggedOut")
 })
 
 
-
-app.listen(4000, function() {
+let port=process.env.PORT||4000;
+app.listen(port, function() {
     console.log("Server started on port 4000");
   });
