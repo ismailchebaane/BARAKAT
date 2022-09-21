@@ -14,7 +14,7 @@ import Rouz from "../products/assets/rouz-jerbi.png"
 import { useDispatch } from "react-redux";
 import { addToCart } from '../../stores/cart/cartSlice';
 import {useParams } from "react-router-dom";
-import ImagePreviewer from 'react-image-animated-previewer'
+
 function ProductZoom() {
    
     const {id}=useParams()

@@ -17,7 +17,7 @@ try{
 }
 
 })
-router.get('/BARAKAT/products-by-categories',async (req,res)=>{
+router.get('/products-by-categories',async (req,res)=>{
  try{
  const product=await Product.aggregate([
      {$match:{}},

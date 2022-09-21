@@ -37,7 +37,7 @@ Start Ordering Now
                         </h2>
                     <h3 class="section-sub-title"><span>From </span><strong>3.5dt</strong><span> You can</span><strong> Order </strong><span> whatever you look for </span></h3>
                 </div>
-                    <Link to="/BARAKAT" class="button">
+                    <Link to="/" class="button">
                        
                         <span class="label">Order Now</span>
                     </Link>
@@ -59,7 +59,7 @@ Start Ordering Now
             <div class="column is-navigation">
                 <div class="column-title">Navigation</div>
                 <ul className="brand">
-                    <li  ><Link to="/BARAKAT">Home</Link></li>
+                    <li  ><Link to="/">Home</Link></li>
                   
                     <li><a href="#about">About</a></li>
                 </ul>

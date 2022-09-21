@@ -10,7 +10,7 @@ function Register()  {
     const Navigate = useNavigate()
     const handleSubmit = (e) => {
     
-fetch("/BARAKAT/register",{
+fetch("/register",{
     method:"POST",
     crossDomain:true,
     headers:{
@@ -32,7 +32,7 @@ alert('already registered')
         }else{
             
             alert('successfully registered')
-            Navigate('/BARAKAT/login')
+            Navigate('/login')
         }
     
     }).then((data)=>{
@@ -66,7 +66,7 @@ alert('already registered')
           </div>
             <button className="ml-[200px] mb-5 mt-[35px] inline-block px-6 py-2 border-2 border-red-600 text-red-600 font-medium text-xs leading-tight uppercase rounded-full hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" type="submit">Register</button>
         </form>
-        <Link  className="pl-[35px] mt-[35px] font-bold text-sm  " to='/BARAKAT/login'>  Already have an account? Login here.</Link>
+        <Link  className="pl-[35px] mt-[35px] font-bold text-sm  " to='/login'>  Already have an account? Login here.</Link>
      </div>
     </div>
     )

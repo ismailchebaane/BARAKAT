@@ -14,11 +14,11 @@ const oneProducts = (props) => {
 
 
 <div className="bg-white shadow-md rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700">
-    <Link to={"/BARAKAT/product/"+props.id}>
+    <Link to={"/product/"+props.id}>
         <img className="imagezoom rounded-t-lg p-8" src={props.src} alt={props.name} />
     </Link>
         <div className="px-5 pb-5">
-            <a href={"/BARAKAT/product"+props.id}>
+            <a href={"/product"+props.id}>
                 <h3 className="text-gray-900 font-semibold text-xl tracking-tight dark:text-white">
                     {props.name}
                 </h3>

@@ -18,9 +18,9 @@ function Login(){
 e.preventDefault()
 dispatch({type:"LOGIN_START"})
 try {
-    const res=await axios.post("/BARAKAT/login",credentials)
+    const res=await axios.post("/login",credentials)
  dispatch({type:"LOGIN_SUCCESS",payload:res.data})
-        Navigate('/BARAKAT')
+        Navigate('/')
     
 } catch (error) {
     dispatch({type:"LOGIN_FAILURE",payload:error.response.data})
@@ -50,7 +50,7 @@ try {
                 <button disabled={loading}  className="ml-[200px] mb-5 mt-[35px] inline-block px-6 py-2 border-2 border-red-600 text-red-600 font-medium text-xs leading-tight uppercase rounded-full hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" onClick={handleClick} type="submit">Log In</button>
             
              </form>
-            <Link className="pl-[35px] mt-[35px] font-bold text-sm  " to="/BARAKAT/register"> Don't have an account? Register here.  </Link>
+            <Link className="pl-[35px] mt-[35px] font-bold text-sm  " to="/register"> Don't have an account? Register here.  </Link>
            
         </div>
         </div> 

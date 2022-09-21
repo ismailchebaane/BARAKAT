@@ -7,7 +7,7 @@ function Logout() {
     const {error,   loading ,dispatch  }=useContext(AuthContext);
     const logout  =async()=>{
       try {
-         fetch("/BARAKAT/logout",{
+         fetch("/logout",{
         method:"GET",
         crossDomain:true,
         headers:{
@@ -24,7 +24,7 @@ function Logout() {
     
             }else{
                 dispatch({type:"LOG_OUT"})
-                Navigate('/BARAKAT')
+                Navigate('/')
                 window.location.reload()
             }
         

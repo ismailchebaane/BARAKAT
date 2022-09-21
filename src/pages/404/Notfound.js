@@ -11,7 +11,7 @@ function NotFound() {
           
             <div class="central-body">
                 <img class="image-404" src="http://salehriaz.com/404Page/img/404.svg" width="300px" />
-                <Link to="/BARAKAT" class="btn-go-home">GO BACK HOME</Link>
+                <Link to="/" class="btn-go-home">GO BACK HOME</Link>
             </div>
             <div class="objects">
                 <img class="object_rocket" src="http://salehriaz.com/404Page/img/rocket.svg" width="40px" />
