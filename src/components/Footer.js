@@ -4,6 +4,7 @@ import "./footer.css"
 import ImageLogo from "./assets/logo.png"
 import ImageLogo1 from "./assets/logo1.png"
 import AnimatedText from 'react-animated-text-content';
+import {motion}from "framer-motion"
 function Footer() {
     return (
         <div>
@@ -37,19 +38,22 @@ Start Ordering Now
                         </h2>
                     <h3 class="section-sub-title"><span>From </span><strong>3.5dt</strong><span> You can</span><strong> Order </strong><span> whatever you look for </span></h3>
                 </div>
+                <motion.div   drag dragConstraints={{left:50,right:50,top:50,bottom:50}} whileHover={{scale:1.1}}>
                     <Link to="/" class="button">
                        
                         <span class="label">Order Now</span>
-                    </Link>
+                    </Link></motion.div>
+
+                    <motion.div drag dragConstraints={{left:50,right:50,top:50,bottom:50}}  whileHover={{scale:1.5}} animate={{scale:1.3}}>
                 <img class="illustration" className="" src={ImageLogo} width="120" height="94" />
-            </div>
+            </motion.div></div>
         </div>
 		<div class="inner ">
             <div class="column is-logo">
                 <Link to="#" class="main-logo">
-                    <div class="logo">
+                    <motion.div whileHover={{scale:1.5}}  class="logo">
                        <img src={ImageLogo1}alt="Stackfindover" />
-                    </div>
+                    </motion.div>
                     <div class="logo-info">
                         <div class="text">Made by ismailChebaane</div>
                         <span class="copyright">© 2022-2023. All rights reserved.</span>

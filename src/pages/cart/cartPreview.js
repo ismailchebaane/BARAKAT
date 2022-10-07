@@ -8,7 +8,7 @@ const dec=(decrementProductAmount);
 function cartPreview({props}) {
   
     return (
-        <div className="bg-white " >
+        <div className="bg-white  " >
            <div className="img ">  <img src={props.src} alt={props.name}></img>   </div> 
         <div className="description">
          <h1>{props.name}</h1> 

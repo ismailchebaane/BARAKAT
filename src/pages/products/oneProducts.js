@@ -1,19 +1,18 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
-
+import {React,useState} from 'react';
+import {motion}from "framer-motion"
 
 
 
 const oneProducts = (props) => {
-   
- 
+
     return (
-        <div className="inline-block    ">
+        <motion.div whileHover={{scale:1.1}} animate={{x:10,scale:1}}initial={{scale:0}} className="inline-block    ">
         <div className=" max-w-2xl  mt-8 mr-3 ml-3">
 
 
-<div className="bg-white shadow-md rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700">
+<div className="bg-white shadow-xl rounded-2xl max-w-sm dark:bg-gray-800 dark:border-gray-700">
     <Link to={"/product/"+props.id}>
         <img className="imagezoom rounded-t-lg p-8" src={props.src} alt={props.name} />
     </Link>
@@ -70,7 +69,7 @@ const oneProducts = (props) => {
 
 
 </div>    
-        </div>
+        </motion.div>
     );
                 
 };

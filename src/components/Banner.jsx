@@ -1,8 +1,11 @@
  import Button from "./elements/Button";
  import Typical from 'react-typical'
  import { Link, Navigate } from 'react-router-dom'
- 
+ import{useState,React}from "react"
+import {motion}from "framer-motion"
  const Banner=()=>{
+ const[clicked,setclicked]=useState(false)
+
 return (
 <div className="bg-black-500">
 <div className=" bg-black-900 banner w-full md:w-2/3 px-7 mx-auto relative flex  items-center-justify-between">
@@ -18,19 +21,20 @@ return (
 
  </h2>
  <p className=" font-semibold text-lg text-red-600 py-2">Get Started Today</p>
- <div className="btn-container "> 
+ <motion.div whileHover={{scale:1.1}} className="btn-container inline-block mr-5"> 
  <Button><a href="#products">Order Now</a>  </Button>
- <Link to='/' className="text-yellow-400 hover:text-yellow-500 font-bold text-decoration-line px-3">See Menu</Link>
+
+  </motion.div>
+  <Link to='/' className="text-yellow-400 hover:text-yellow-500 font-bold text-decoration-line px-3">See Menu</Link>
 
   </div>
-  </div>
-  <div className="banner-image w-full md:w-1/2 p-3 flex justify-end">
+  <motion.div  onClick={()=>{setclicked(!clicked)}} animate={{x:clicked?[0,800,-800,0]:0}} className="banner-image w-full md:w-1/2 p-3 flex justify-end">
    
    
     <img   src={require("../assets/images/pizza_banner.png")}alt="bannerImage"></img>
  
 
-  </div>
+  </motion.div>
 
 
 </div>

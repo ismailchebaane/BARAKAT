@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import immg from"../../assets/images/pizza_banner.png"
 import { useNavigate } from "react-router-dom"
-
+import {motion}from "framer-motion"
 function Register()  {
     const [email, setEmail] = useState('');
     const [password, setPass] = useState('');
@@ -45,7 +45,10 @@ alert('already registered')
      
     return ( <div className="pb-[520px]">  
         <div className="auth-form-container h-[400px]  block absolute top-1/3 left-1/4 rounded-lg 	 bg-white w-[550px]">
+        <motion.div transition={{duration:3}} animate={{x:[-800,800,800,0]}}>
+         
          <img className="w-[300px] absolute left-[350px] top-[-100px] imgpizzaimg" src={immg} alt='pizza img'></img>
+         </motion.div> 
             <h2 className="font-bold text-center pt-6 pb-5 text-2xl text-red-500 ">Register</h2>
             <hr className="pb-4"></hr>
         <form className="register-form pt-3 pl-3" onSubmit={handleSubmit}>

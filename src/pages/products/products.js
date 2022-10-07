@@ -1,4 +1,4 @@
-import React from 'react'
+import {React,useState} from 'react'
 import OneProducts from "./oneProducts"
 import poulet from "./assets/poulet.png"
 import chickenw from "./assets/chicken wings.png"
@@ -16,6 +16,11 @@ import { useDispatch } from "react-redux";
 import { addToCart } from '../../stores/cart/cartSlice';
 
 function Products() {
+  
+ 
+    const[found,setfound]=useState(false)
+    const [searchInput,setsearchInput]=useState("")
+    const [search,setSearch]=useState(false)
     const dispatch  =useDispatch();
    const prod=[
     {     description:"Lorem Ipsum is simply dummy text of the  Ipsum is simply dummy text of  Ipsum is simply dummy text of the printing and types the printing and types printing and typesetting industry. ",
@@ -85,7 +90,8 @@ function Products() {
 
 
    ]
-   
+  
+
     return (
 <div id="products">
         <br></br>
@@ -95,27 +101,47 @@ function Products() {
     <h2 className="text-center font-bold text-2xl animate__bounceOutRight"> Our Products </h2>
     <br></br>
     <hr></hr>
+    <br></br>
+    <br></br>
+    <br></br>
+    <h1 className="text-2xl mb-5 flex center justify-center font-bold">Search or Filter here</h1>
+ 
+       <div class="hero">
+     
+      <div className={search?"active":""} id="searchBox">
+      <i onClick={()=>{setSearch(!search)}} class="fa-solid fa-2x fa-magnifying-glass"id="googleIcon"></i>
+        
+        <input className='inpuut' value={searchInput} onChange={(e)=>{setsearchInput(e.target.value)}} type="text" placeholder="Search for products by typing their name " />
+        <i class="fas fa-microphone fa-2x "></i>
+      </div>
+    </div>
+    <div className="productSection" style={{display:found?"none":"block"}}>
         <div className="bg-white ml-[100px] h-auto-inline-block w-auto">
-    
+  
+ 
 
-           {prod.map((p,index)=>{
-       return(
-        
-        
-        <OneProducts id={p.id} key={index} src={p.imageUrl} name={p.name} price={p.price} addToCard={()=>{
-               const t={name:p.name,price:p.price,description:p.description,imageUrl:p.imageUrl}
-            dispatch(addToCart(t))
-        }}  />
-        
-        
-        
-        
-        )  
-    
-           })
-           } 
+            
+           {
+           
 
+           prod.map((p,index)=>{
+        return(
+         
+     
+         <OneProducts id={p.id} key={index} src={p.imageUrl} name={p.name} price={p.price} addToCard={()=>{
+                const t={name:p.name,price:p.price,description:p.description,imageUrl:p.imageUrl}
+             dispatch(addToCart(t))
+         }}  />
+     
+         
+         
+         
+         )  
+     
+            })
+        }
 
+</div>
         </div>
         </div>
     )
