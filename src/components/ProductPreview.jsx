@@ -1,7 +1,7 @@
 import React from 'react'
 import {useState,useEffect} from "react";
 import ProductPreviewCart from './ProductPreviewCart';
-
+import axios from 'axios';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
  import{useDispatch} from "react-redux"
@@ -31,23 +31,18 @@ function ProductPreview() {
   };
 
 
-  const[data,setData]=useState([{
-
-    name:'',
-    adjective:'',
-    
-    description:'',
-    price:'',
-    
-    category:'',
-    
-    imageUrl:'',
-  
-  }])
+  const[data,setData]=useState([{}])
   useEffect(()=>{
-    fetch('/api/products').then(resp=>resp.json())
-    .then(data=>{setData(data)})
   
+    axios.get('https://stormy-ray-shawl.cyclic.app/api/products')
+    .then(response => {
+     
+      console.log(response.data); setData(response.data);
+      console.log(data)
+    })
+    .catch(error => {
+      console.log(error);
+    });
   
   },[])
   

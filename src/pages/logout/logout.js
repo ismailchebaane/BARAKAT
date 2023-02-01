@@ -7,7 +7,7 @@ function Logout() {
     const {error,   loading ,dispatch  }=useContext(AuthContext);
     const logout  =async()=>{
       try {
-         fetch("/logout",{
+         fetch("https://stormy-ray-shawl.cyclic.app/logout",{
         method:"GET",
         crossDomain:true,
         headers:{

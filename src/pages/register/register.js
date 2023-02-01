@@ -10,7 +10,7 @@ function Register()  {
     const Navigate = useNavigate()
     const handleSubmit = (e) => {
     
-fetch("/register",{
+fetch("https://stormy-ray-shawl.cyclic.app/register",{
     method:"POST",
     crossDomain:true,
     headers:{

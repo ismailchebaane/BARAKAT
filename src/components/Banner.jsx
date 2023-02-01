@@ -1,8 +1,9 @@
  import Button from "./elements/Button";
- import Typical from 'react-typical'
+
  import { Link, Navigate } from 'react-router-dom'
  import{useState,React}from "react"
 import {motion}from "framer-motion"
+import Typical from 'react-typical'
  const Banner=()=>{
  const[clicked,setclicked]=useState(false)
 

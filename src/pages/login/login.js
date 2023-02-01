@@ -18,7 +18,7 @@ function Login(){
 e.preventDefault()
 dispatch({type:"LOGIN_START"})
 try {
-    const res=await axios.post("/login",credentials)
+    const res=await axios.post("https://stormy-ray-shawl.cyclic.app/login",credentials)
  dispatch({type:"LOGIN_SUCCESS",payload:res.data})
         Navigate('/')
     
